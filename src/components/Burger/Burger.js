@@ -1,10 +1,12 @@
 import React from 'react';
 import './Burger.css';
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
+//import {withRouter} from 'react-router-dom';
 
 
 
 const burger =(props)=>{
+    console.log(props);
     //preia cheile(string) din obiectul trimis ca parametru
     let transformedIngredients=Object.keys(props.ingredients).map(
 igKey=>{
@@ -30,4 +32,5 @@ console.log(transformedIngredients);
     );
 };
 
-export default burger ;
+// export default withRouter(burger) ;
+export default burger;
