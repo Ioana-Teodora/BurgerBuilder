@@ -6,7 +6,7 @@ import Spinner from '../../components/UI/Spinner/Spinner';
 
 class Orders extends Component {
     state = {
-        orders: null,
+        orders: [],
         loading: true
       }
     componentDidMount(){
