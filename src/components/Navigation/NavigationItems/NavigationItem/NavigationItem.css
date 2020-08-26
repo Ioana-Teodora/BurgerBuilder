@@ -10,14 +10,12 @@
         width: 100%;
         box-sizing: border-box;
         display:block;
-    
     }
-    
     .NavigationItem a:hover, 
     .NavigationItem a:active, 
     .NavigationItem a.active{
 
-        columns: #40a4c8;
+        color: #40a4c8;
     
     }
 @media (min-width: 500px ){
