@@ -11,14 +11,16 @@ const INGREDIENT_PRICES={
 const initialState = {
     ingredients: null,
     totalPrice: 4,
-    error: false
+    error: false,
+    building:false
 };
 const addIngredient=(state,action)=>{
     const updateIngredient={ [action.ingredientName]: state.ingredients[action.ingredientName]+1};
     const updateIngredients=updateObject(state.ingredients,updateIngredient);
     const updatedState={
         ingredients:updateIngredients,
-        totalPrice: state.totalPrice + INGREDIENT_PRICES[action.ingredientName]
+        totalPrice: state.totalPrice + INGREDIENT_PRICES[action.ingredientName],
+        building: true
     }
     return updateObject(state,updatedState);
 }
@@ -27,7 +29,8 @@ const removeIngredient=(state,action)=>{
     const updateIngre=updateObject(state.ingredients,updateIng);
     const updatedSt={
         ingredients:updateIngre,
-        totalPrice: state.totalPrice - INGREDIENT_PRICES[action.ingredientName]
+        totalPrice: state.totalPrice - INGREDIENT_PRICES[action.ingredientName],
+        building: true
     }
     return updateObject(state,updatedSt);
 }
@@ -38,7 +41,8 @@ const setIngredients=(state,action)=>{
         chesse: action.ingredients.chesse,
         meat: action.ingredients.meat},
     error: false,
-    totalPrice: 4});
+    totalPrice: 4,
+    building: false});
 }
 const reducer = (state = initialState, action) => {
     switch (action.type) {
